@@ -28,15 +28,22 @@ export default function TextOnTvPage() {
       }}
       sections={sections}
       hero={
-        <video
-          src="/videos/Passive scroll x7 (1).mov"
-          className="aspect-video w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/images/tv-frame.png"
-        />
+        <div className="relative aspect-video bg-[#121212]">
+          <video
+            src="/videos/Passive scroll x7 (1).mov"
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/tv-frame.png"
+            alt=""
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+          />
+        </div>
       }
       otherProjects={[
         {

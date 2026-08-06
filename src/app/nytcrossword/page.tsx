@@ -27,12 +27,22 @@ export default function NytCrosswordPage() {
       }}
       sections={sections}
       hero={
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src="/images/nyt-frame.png"
-          alt="The New York Times"
-          className="w-full bg-[#1c1c1c]"
-        />
+        <div className="relative aspect-video bg-[#1c1c1c]">
+          <video
+            src="/videos/Mini.mp4"
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/nyt-frame.png"
+            alt="The New York Times"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+          />
+        </div>
       }
       otherProjects={[
         {

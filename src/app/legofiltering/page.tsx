@@ -29,12 +29,22 @@ export default function LegoFilteringPage() {
       }}
       sections={sections}
       hero={
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src="/images/lego-frame.png"
-          alt="BrickLink Studio filtering interface"
-          className="w-full bg-[#121212]"
-        />
+        <div className="relative aspect-video bg-[#121212]">
+          <video
+            src="/videos/framer/UUTBWERgxHoHdFdD8nmynSqJKw.mp4"
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/lego-frame.png"
+            alt=""
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+          />
+        </div>
       }
       otherProjects={[
         {
