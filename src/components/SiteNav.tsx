@@ -36,7 +36,7 @@ export function SiteNav() {
                 key={link.href}
                 href={link.href}
                 className={clsx(
-                  "transition-opacity hover:opacity-100",
+                  "rounded-sm outline-none transition-opacity hover:opacity-100 focus-visible:ring-1 focus-visible:ring-white/40",
                   active ? "opacity-100" : "opacity-55",
                 )}
               >

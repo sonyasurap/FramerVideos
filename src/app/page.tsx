@@ -29,12 +29,13 @@ export default function HomePage() {
       <section className="relative flex min-h-screen flex-col items-center justify-center px-5 pt-24 text-center md:px-8">
         <div className="relative mb-8 h-[210px] w-[210px] md:mb-10 md:h-[250px] md:w-[250px]">
           <video
-            className="h-full w-full object-contain"
+            className="h-full w-full object-contain opacity-95"
             src="/videos/globe.mp4"
             autoPlay
             muted
             loop
             playsInline
+            preload="auto"
             aria-hidden
           />
         </div>

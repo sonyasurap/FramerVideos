@@ -26,7 +26,7 @@ export function ProjectCard({
       transition={{ duration: 0.7, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
     >
       <Link href={href} className="group block">
-        <div className="relative overflow-hidden rounded-[6px] bg-[#121212] aspect-[16/9]">
+        <div className="relative overflow-hidden rounded-[6px] bg-[#181818] aspect-[16/9]">
           {video ? (
             <video
               className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.015]"
@@ -37,11 +37,12 @@ export function ProjectCard({
               playsInline
             />
           ) : null}
+          {/* Decorative frame overlay (transparent center) */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={frame}
             alt=""
-            className="relative z-10 h-full w-full object-cover transition duration-500 group-hover:scale-[1.015]"
+            className="pointer-events-none absolute inset-0 z-10 h-full w-full object-cover transition duration-500 group-hover:scale-[1.015]"
           />
         </div>
         <p className="mt-4 text-center text-[12px] font-medium uppercase tracking-label text-soft md:mt-5 md:text-[13px]">
