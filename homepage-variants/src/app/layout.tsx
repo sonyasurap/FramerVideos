@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import {
-  DM_Sans,
-  Fraunces,
-  IBM_Plex_Mono,
-  Outfit,
-  Space_Grotesk,
-  Syne,
-} from "next/font/google";
+import { DM_Sans, Fraunces, IBM_Plex_Mono, Space_Grotesk, Syne } from "next/font/google";
 import "./globals.css";
 
 const syne = Syne({
@@ -27,12 +20,6 @@ const space = Space_Grotesk({
   weight: ["400", "500", "600", "700"],
 });
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
-  weight: ["300", "400", "500", "600", "700"],
-});
-
 const fraunces = Fraunces({
   subsets: ["latin"],
   variable: "--font-fraunces",
@@ -48,7 +35,7 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Sonya Surapaneni — Homepage Variants",
   description:
-    "Five homepage directions for Sonya Surapaneni: AI, prototyping, storytelling, and product design.",
+    "Five structurally different homepage directions for Sonya Surapaneni.",
 };
 
 export default function RootLayout({
@@ -59,9 +46,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${syne.variable} ${dmSans.variable} ${space.variable} ${outfit.variable} ${fraunces.variable} ${plexMono.variable} antialiased`}
+        className={`${syne.variable} ${dmSans.variable} ${space.variable} ${fraunces.variable} ${plexMono.variable} bg-white text-ink antialiased`}
       >
-        <div className="noise" aria-hidden />
         {children}
       </body>
     </html>

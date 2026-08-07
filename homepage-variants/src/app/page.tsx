@@ -4,56 +4,56 @@ import { VariantSwitcher } from "@/components/VariantSwitcher";
 
 export default function IndexPage() {
   return (
-    <div className="min-h-screen bg-[#eceae4] text-ink">
-      <main className="mx-auto flex min-h-screen max-w-5xl flex-col justify-center px-6 py-20 md:px-10">
+    <div className="min-h-screen bg-white text-ink">
+      <main className="mx-auto max-w-3xl px-6 py-20 md:px-10">
         <p
-          className="mb-3 text-[12px] uppercase tracking-[0.18em] text-mute"
+          className="text-[11px] uppercase tracking-[0.16em] text-grey-500"
           style={{ fontFamily: "var(--font-plex)" }}
         >
           Homepage exploration
         </p>
         <h1
-          className="max-w-[12ch] text-[clamp(2.8rem,8vw,5.5rem)] font-semibold leading-[0.95] tracking-[-0.04em]"
+          className="mt-4 text-[clamp(2.4rem,6vw,3.8rem)] font-semibold leading-[0.95] tracking-[-0.04em]"
           style={{ fontFamily: "var(--font-syne)" }}
         >
           {profile.name}
         </h1>
         <p
-          className="mt-6 max-w-xl text-[17px] leading-relaxed text-ink-soft"
+          className="mt-5 max-w-lg text-[15px] leading-relaxed text-grey-700"
           style={{ fontFamily: "var(--font-dm)" }}
         >
-          Five homepage directions. Same story — different type energy, density,
-          and composition. Pick a variant to explore.
+          Five structurally different homes — white / light grey, with case
+          study thumbnails as placeholders. Pick one.
         </p>
 
-        <ol className="mt-14 grid gap-4 md:grid-cols-2">
+        <ul className="mt-12 divide-y divide-grey-200 border-y border-grey-200">
           {variants.map((v, i) => (
             <li key={v.id}>
               <Link
                 href={v.href}
-                className="group flex h-full flex-col justify-between border border-black/10 bg-white/50 px-5 py-5 transition hover:border-black/30 hover:bg-white/80"
+                className="group flex items-baseline justify-between gap-6 py-5 transition hover:bg-grey-50"
               >
-                <div className="flex items-baseline justify-between gap-3">
-                  <span
-                    className="text-[12px] uppercase tracking-[0.16em] text-mute"
+                <div>
+                  <p
+                    className="text-[11px] uppercase tracking-[0.14em] text-grey-500"
                     style={{ fontFamily: "var(--font-plex)" }}
                   >
                     {String(i + 1).padStart(2, "0")} / {v.title}
-                  </span>
-                  <span className="text-[13px] text-mute transition group-hover:text-ink">
-                    Open →
-                  </span>
+                  </p>
+                  <p
+                    className="mt-2 text-[17px] tracking-[-0.02em]"
+                    style={{ fontFamily: "var(--font-space)" }}
+                  >
+                    {v.blurb}
+                  </p>
                 </div>
-                <p
-                  className="mt-8 text-[18px] leading-snug tracking-[-0.02em]"
-                  style={{ fontFamily: "var(--font-syne)" }}
-                >
-                  {v.blurb}
-                </p>
+                <span className="shrink-0 text-[13px] text-grey-500 group-hover:text-ink">
+                  Open →
+                </span>
               </Link>
             </li>
           ))}
-        </ol>
+        </ul>
       </main>
       <VariantSwitcher />
     </div>

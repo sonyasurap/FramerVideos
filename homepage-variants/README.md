@@ -1,6 +1,6 @@
 # Sonya Surapaneni — Homepage Variants
 
-A fresh exploration project with **five homepage directions** for a full portfolio redo.
+Five **structurally different** homepage directions. Palette: white + light grey. Case study images used as placeholders.
 
 ## Run
 
@@ -10,17 +10,14 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3001](http://localhost:3001) if 3000 is busy, or whatever port Next prints.
-
 ## Variants
 
-| Route | Name | Idea |
-| --- | --- | --- |
-| `/` | Index | Pick a direction |
-| `/v1` | Statement | Oversized name + one skill sentence |
-| `/v2` | Specimen | Spec-sheet skills + status block |
-| `/v3` | Split | Editorial split: byline / path |
-| `/v4` | Chapters | Three thematic working modes |
-| `/v5` | Quiet | Maximum air, soft type |
+| Route | Structure |
+| --- | --- |
+| `/v1` | **Feed** — sticky identity header + vertical project stack |
+| `/v2` | **Reel** — fixed left rail + horizontal scrolling projects |
+| `/v3` | **Feature** — one giant case study + slim identity column |
+| `/v4` | **Index** — compact header + irregular thumbnail mosaic |
+| `/v5` | **Strip** — massive type banner + single cinematic band |
 
-Shared copy lives in `src/lib/content.ts`. A floating switcher appears on every page.
+Shared copy/projects: `src/lib/content.ts`

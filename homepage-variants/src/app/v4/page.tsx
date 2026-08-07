@@ -1,103 +1,112 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { profile } from "@/lib/content";
+import { profile, projects, skillsSentence } from "@/lib/content";
+import { ProjectThumb } from "@/components/ProjectThumb";
 import { VariantSwitcher } from "@/components/VariantSwitcher";
 
-const chapters = [
-  {
-    label: "01",
-    title: "Intelligence & craft",
-    body: "AI, prototyping, and coding experience — building things early enough to learn what the product wants to become.",
-    wash: "linear-gradient(180deg, rgba(31,75,63,0.1), transparent 60%)",
-  },
-  {
-    label: "02",
-    title: "Story & sense",
-    body: "Storytelling and product sense — turning systems, constraints, and research into narratives people can feel.",
-    wash: "linear-gradient(180deg, rgba(11,61,74,0.08), transparent 60%)",
-  },
-  {
-    label: "03",
-    title: "Surfaces & scale",
-    body: "B2B and B2C work, multi-medium design — from dense tools to consumer moments across screens and formats.",
-    wash: "linear-gradient(180deg, rgba(90,110,96,0.12), transparent 60%)",
-  },
-];
-
+/**
+ * V4 INDEX — compact top identity strip, then an irregular mosaic of thumbnails
+ * (not a uniform card stack / not a hero+text page)
+ */
 export default function VariantFour() {
-  return (
-    <div className="relative min-h-screen bg-[#f1f3f1] text-ink">
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(900px 480px at 50% -10%, rgba(31,75,63,0.1), transparent 55%)",
-        }}
-      />
+  const [a, b, c, d, e, f, g, h] = projects;
 
-      <main className="relative mx-auto min-h-screen max-w-[1280px] px-5 py-8 md:px-10 md:py-10">
-        <header className="flex flex-col gap-6 border-b border-black/10 pb-8 md:flex-row md:items-end md:justify-between">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[clamp(2.8rem,7vw,5.5rem)] font-semibold leading-[0.92] tracking-[-0.05em]"
-            style={{ fontFamily: "var(--font-syne)" }}
+  return (
+    <div className="min-h-svh bg-white text-ink">
+      <header className="border-b border-grey-200 px-5 py-4 md:px-8">
+        <div className="mx-auto flex max-w-[1400px] flex-wrap items-baseline gap-x-8 gap-y-2">
+          <h1
+            className="text-[1.35rem] font-semibold tracking-[-0.03em] md:text-[1.5rem]"
+            style={{ fontFamily: "var(--font-space)" }}
           >
             {profile.name}
-          </motion.h1>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="max-w-xs text-[13px] leading-relaxed text-mute"
+          </h1>
+          <p
+            className="max-w-2xl flex-1 text-[12px] leading-relaxed text-grey-700 md:text-[13px]"
             style={{ fontFamily: "var(--font-dm)" }}
           >
-            Currently {profile.current}. Prev {profile.previous.join(", ")}.
-          </motion.div>
-        </header>
-
-        <p
-          className="mt-8 max-w-2xl text-[clamp(1.1rem,2vw,1.35rem)] leading-relaxed text-ink-soft"
-          style={{ fontFamily: "var(--font-dm)" }}
-        >
-          My skills are AI, prototyping, storytelling, product sense, B2B and
-          B2C work, multi-medium design, and coding experience — arranged here
-          as three ways of working.
-        </p>
-
-        <div className="mt-12 grid gap-4 md:mt-16 md:grid-cols-3 md:gap-5">
-          {chapters.map((chapter, i) => (
-            <motion.section
-              key={chapter.title}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + i * 0.1, duration: 0.65 }}
-              className="min-h-[280px] border border-black/10 bg-white/55 p-6 md:min-h-[340px] md:p-8"
-              style={{ backgroundImage: chapter.wash }}
-            >
-              <p
-                className="text-[11px] uppercase tracking-[0.18em] text-mute"
-                style={{ fontFamily: "var(--font-plex)" }}
-              >
-                {chapter.label}
-              </p>
-              <h2
-                className="mt-6 text-[clamp(1.5rem,2.5vw,2rem)] font-medium tracking-[-0.03em]"
-                style={{ fontFamily: "var(--font-syne)" }}
-              >
-                {chapter.title}
-              </h2>
-              <p
-                className="mt-4 max-w-[28ch] text-[15px] leading-relaxed text-ink-soft"
-                style={{ fontFamily: "var(--font-dm)" }}
-              >
-                {chapter.body}
-              </p>
-            </motion.section>
-          ))}
+            Skills: {skillsSentence()}. Currently {profile.current}. Prev{" "}
+            {profile.previous.join(", ")}.
+          </p>
         </div>
+      </header>
+
+      <main className="mx-auto grid max-w-[1400px] grid-cols-6 gap-2 px-2 py-2 pb-28 md:gap-3 md:px-3 md:py-3">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="col-span-6 md:col-span-4"
+        >
+          <ProjectThumb
+            src={a.image}
+            alt={a.title}
+            label={a.title}
+            year={a.year}
+            showMeta
+            className="aspect-[16/10] border border-grey-200 md:aspect-[16/9]"
+          />
+        </motion.div>
+        <div className="col-span-6 grid grid-cols-2 gap-2 md:col-span-2 md:grid-cols-1 md:gap-3">
+          <ProjectThumb
+            src={b.image}
+            alt={b.title}
+            label={b.title}
+            year={b.year}
+            showMeta
+            className="aspect-square border border-grey-200 md:aspect-auto md:h-full"
+          />
+          <ProjectThumb
+            src={c.image}
+            alt={c.title}
+            label={c.title}
+            year={c.year}
+            showMeta
+            className="aspect-square border border-grey-200 md:aspect-auto md:h-full"
+          />
+        </div>
+
+        <ProjectThumb
+          src={d.image}
+          alt={d.title}
+          label={d.title}
+          year={d.year}
+          showMeta
+          className="col-span-3 aspect-[4/5] border border-grey-200 md:col-span-2"
+        />
+        <ProjectThumb
+          src={e.image}
+          alt={e.title}
+          label={e.title}
+          year={e.year}
+          showMeta
+          className="col-span-3 aspect-[4/5] border border-grey-200 md:col-span-2"
+        />
+        <ProjectThumb
+          src={f.image}
+          alt={f.title}
+          label={f.title}
+          year={f.year}
+          showMeta
+          className="col-span-6 aspect-[16/9] border border-grey-200 md:col-span-2 md:aspect-auto md:min-h-full"
+        />
+
+        <ProjectThumb
+          src={g.image}
+          alt={g.title}
+          label={g.title}
+          year={g.year}
+          showMeta
+          className="col-span-2 aspect-square border border-grey-200"
+        />
+        <ProjectThumb
+          src={h.image}
+          alt={h.title}
+          label={h.title}
+          year={h.year}
+          showMeta
+          className="col-span-4 aspect-[16/9] border border-grey-200 md:aspect-[21/9]"
+        />
       </main>
 
       <VariantSwitcher />

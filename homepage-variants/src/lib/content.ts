@@ -15,36 +15,90 @@ export const profile = {
   ] as const,
 };
 
+export const projects = [
+  {
+    slug: "lego",
+    title: "LEGO filtering",
+    year: "2025",
+    image: "/images/2hE1G1aaIwDkzyf5G78GswCmU.png",
+    fallback: "/images/lego-frame.png",
+  },
+  {
+    slug: "textontv",
+    title: "Text on TV",
+    year: "2024",
+    image: "/images/fLn6q13LZzF7CCekn27yyrDn8.jpg",
+    fallback: "/images/tv-frame.png",
+  },
+  {
+    slug: "nyt",
+    title: "NYT Crossword",
+    year: "2024",
+    image: "/images/4WKVGi9JUKmGX1tKXWUKnyAZTi0.png",
+    fallback: "/images/nyt-frame.png",
+  },
+  {
+    slug: "pov",
+    title: "POV writing app",
+    year: "Sandbox",
+    image: "/images/R9P5mf06qf0YME5igvd1foMkN1M.jpeg",
+  },
+  {
+    slug: "hoppi",
+    title: "Hoppi cafe",
+    year: "Sandbox",
+    image: "/images/JGrPnHUZ6C25XPmgFC9MD5iq67I.png",
+  },
+  {
+    slug: "teapot",
+    title: "Teapot gardens",
+    year: "Sandbox",
+    image: "/images/Ezo9yAdbM1u3FBAMJ7duxrIPbLc.png",
+  },
+  {
+    slug: "office",
+    title: "LEGO office",
+    year: "2025",
+    image: "/images/2hE1G1aaIwDkzyf5G78GswCmU.png",
+  },
+  {
+    slug: "research",
+    title: "Part research",
+    year: "2025",
+    image: "/images/FjkBbyTjTXvfNgKzk1TueKpRwug.png",
+  },
+] as const;
+
 export const variants = [
   {
     id: "v1",
     href: "/v1",
-    title: "Statement",
-    blurb: "Oversized type, one continuous skill sentence, quiet company trail.",
+    title: "Feed",
+    blurb: "Vertical work stack — name pinned, case studies scroll underneath.",
   },
   {
     id: "v2",
     href: "/v2",
-    title: "Specimen",
-    blurb: "Design-spec energy — numbered skills, status block, modular rhythm.",
+    title: "Reel",
+    blurb: "Fixed identity rail + full-bleed horizontal project reel.",
   },
   {
     id: "v3",
     href: "/v3",
-    title: "Split",
-    blurb: "Editorial split: skills on the left, path on the right.",
+    title: "Feature",
+    blurb: "One giant case study hero, bio as a narrow side column.",
   },
   {
     id: "v4",
     href: "/v4",
-    title: "Chapters",
-    blurb: "Three thematic fields for how you work — still name-first.",
+    title: "Index",
+    blurb: "Dense mosaic of thumbnails with a compact identity header.",
   },
   {
     id: "v5",
     href: "/v5",
-    title: "Quiet",
-    blurb: "Maximum air. Name, one line, a soft current/prev whisper.",
+    title: "Strip",
+    blurb: "Typographic top bar, then a single cinematic project band.",
   },
 ] as const;
 
