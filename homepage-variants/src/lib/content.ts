@@ -56,16 +56,16 @@ export const projects = [
     image: "/images/Ezo9yAdbM1u3FBAMJ7duxrIPbLc.png",
   },
   {
-    slug: "office",
-    title: "LEGO office",
-    year: "2025",
-    image: "/images/2hE1G1aaIwDkzyf5G78GswCmU.png",
+    slug: "ambient",
+    title: "TV ambient mode",
+    year: "2024",
+    image: "/images/ocdZRDt02PScAo2JpS5jtceon0.jpg",
   },
   {
     slug: "research",
     title: "Part research",
     year: "2025",
-    image: "/images/FjkBbyTjTXvfNgKzk1TueKpRwug.png",
+    image: "/images/b2DcTkRWXxxXmluCNd73DaIRrs.jpg",
   },
 ] as const;
 
