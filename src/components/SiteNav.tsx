@@ -19,7 +19,7 @@ export function SiteNav() {
         </Link>
 
         <nav
-          className="flex items-center gap-2 text-[16px] tracking-[0.02em] text-muted md:gap-6"
+          className="flex items-center gap-1 text-[16px] tracking-[0.02em] text-muted md:gap-5"
           aria-label="Primary"
         >
           {navLinks.map((link) => {
