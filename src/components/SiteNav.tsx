@@ -28,16 +28,16 @@ export function SiteNav({ variant = "overlay" }: SiteNavProps) {
     >
       <div
         className={clsx(
-          "flex items-center justify-between gap-6",
+          "flex items-center justify-between gap-3 sm:gap-6",
           isPanel
-            ? "px-6 pt-6"
+            ? "px-4 pt-4 sm:px-6 sm:pt-6"
             : "mx-auto max-w-site px-5 py-5 md:px-8 md:py-6",
         )}
       >
         <Link
           href="/"
           className={clsx(
-            "min-w-0 text-[16px] tracking-nav transition-opacity hover:opacity-100",
+            "min-w-0 truncate text-[14px] tracking-nav transition-opacity hover:opacity-100 sm:text-[16px]",
             isPanel ? "text-panel-muted opacity-80" : "text-soft",
           )}
         >
@@ -46,7 +46,7 @@ export function SiteNav({ variant = "overlay" }: SiteNavProps) {
 
         <nav
           className={clsx(
-            "flex shrink-0 items-center gap-10 text-[16px] tracking-nav md:gap-12",
+            "flex shrink-0 items-center gap-4 text-[14px] tracking-nav sm:gap-10 sm:text-[16px] md:gap-12",
             isPanel ? "text-panel-muted opacity-80" : "text-soft",
           )}
         >
@@ -67,7 +67,7 @@ export function SiteNav({ variant = "overlay" }: SiteNavProps) {
                     : "focus-visible:ring-white/40",
                   isPanel &&
                     active &&
-                    "rounded-pill border border-panel-muted px-[22px] py-[10px]",
+                    "rounded-pill border border-panel-muted px-3 py-2 sm:px-[22px] sm:py-[10px]",
                   !isPanel && (active ? "opacity-100" : "opacity-55"),
                 )}
               >
